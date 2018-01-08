@@ -135,8 +135,8 @@ module.exports = function(grunt) {
                 },
                 concurrency: 1
             },
-            phantomjs: {
-                browsers: ['PhantomJS']
+            headless: {
+                browsers: ['ChromeHeadless']
             },
             chrome: {
                 browsers: ['Chrome']
@@ -245,7 +245,10 @@ module.exports = function(grunt) {
         });
     });
 
-    grunt.registerTask('karma:local', 'karma:phantomjs');
+    grunt.registerTask('karma:local', [
+        'karma:chrome',
+        'karma:headless'
+    ]);
 
     grunt.registerTask('karma:remote', [
         'karma:browserstack',
