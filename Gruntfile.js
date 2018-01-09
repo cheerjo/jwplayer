@@ -254,8 +254,6 @@ module.exports = function(grunt) {
         'karma:browserstack',
         'karma:browserstack_firefox',
         'karma:browserstack_ie11',
-        'karma:browserstack_ie10',
-        'karma:browserstack_ie9'
     ]);
 
     grunt.registerTask('test', [
